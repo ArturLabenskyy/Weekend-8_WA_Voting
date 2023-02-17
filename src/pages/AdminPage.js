@@ -15,6 +15,7 @@ const AdminPage = ({ setPage }) => {
     return (
         <div>
             Welcome to AdminPage
+            <div className="user-vote-table"></div>
             <button style={style} onClick={handleClick}>
                 Logout
             </button>
