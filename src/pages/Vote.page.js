@@ -58,6 +58,7 @@ const VotingPage = ({ setPage }) => {
                         houseName={house}
                         clickFunction={handleClick}
                         voteHouse={setHouse}
+                        key={house}
                     />
                 ))}
             </div>
