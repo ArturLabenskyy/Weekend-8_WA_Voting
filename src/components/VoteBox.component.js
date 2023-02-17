@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 // const houses = ["Gryffindor", "hufflepuff", "ravenclaw", "slytherin"];
 import gryffindor from "../assets/images/gryffindor.png";
 import hufflepuff from "../assets/images/hufflepuff.png";
@@ -8,46 +8,30 @@ import slytherin from "../assets/images/slytherin.png";
 
 import Modal from "./Modal.component";
 
-const VoteBox = ({ houseName }) => {
-    const [hiddenButton, setButton] = useState("none");
-
+const VoteBox = ({ houseName, clickFunction, voteHouse }) => {
     let imageUrl = "";
-
     switch (houseName) {
-        case "gryffindor":
+        case "Gryffindor":
             imageUrl = gryffindor;
             break;
-        case "hufflepuff":
+        case "Hufflepuff":
             imageUrl = hufflepuff;
             break;
-        case "ravenclaw":
+        case "Ravenclaw":
             imageUrl = ravenclaw;
             break;
-        case "slytherin":
+        case "Slytherin":
             imageUrl = slytherin;
     }
 
-    const handleClick = () => {
-        setButton("block");
+    const onHouseClick = () => {
+        clickFunction();
+        voteHouse(houseName);
     };
     return (
-        <div className="vote-box" onClick={handleClick}>
+        <div className="vote-box" onClick={onHouseClick}>
             <img src={imageUrl} alt={houseName} />
             <h4>Total Votes: 0</h4>
-            <div className="vote-buttons">
-                <button
-                    className="vote-button"
-                    style={{ display: hiddenButton }}
-                >
-                    Confirm
-                </button>
-                <button
-                    className="vote-button"
-                    style={{ display: hiddenButton }}
-                >
-                    Change
-                </button>
-            </div>
         </div>
     );
 };

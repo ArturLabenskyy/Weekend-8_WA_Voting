@@ -25,7 +25,7 @@ const Wrapper = styled.div`
         align-items: center;
     }
     .vote-box {
-        height: 100%;
+        height: 80%;
         width: 20%;
         display: flex;
         flex-direction: column;
@@ -47,6 +47,18 @@ const Wrapper = styled.div`
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+    }
+
+    .vote-buttons h2 {
+        text-align: center;
+    }
+
+    .vote-button {
+        display: block;
+        height: 5rem;
+        width: 10rem;
+        margin-bottom: 1rem;
+        font-size: 2rem;
     }
 `;
 export default Wrapper;

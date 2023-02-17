@@ -8,6 +8,7 @@ import Login from "./Login.page";
 const [, voting] = PAGES;
 
 const Landing = ({ setPage }) => {
+    localStorage.removeItem(`loggedInUser`);
     return (
         <Wrapper className="landing-page">
             <nav className="header">

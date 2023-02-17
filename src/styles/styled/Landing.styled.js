@@ -17,6 +17,7 @@ const Wrapper = styled.div`
         justify-content: center;
     }
     .page {
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -33,7 +34,7 @@ const Wrapper = styled.div`
     }
     .main-img {
         display: block;
-        align-self: center;
+        align-self: flex-start;
     }
     @media (min-width: 992px) {
         .page {

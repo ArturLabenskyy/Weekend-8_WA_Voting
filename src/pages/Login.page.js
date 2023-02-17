@@ -54,7 +54,6 @@ const Login = ({ setPage }) => {
             return;
         } else {
             const user = findUserByEmail(email);
-
             if (user.length === 0) {
                 console.log(user);
                 setIsLoading(false);
