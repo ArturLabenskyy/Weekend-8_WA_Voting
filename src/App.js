@@ -1,35 +1,28 @@
 import { useState, useEffect } from "react";
 
 import { PAGES } from "./constants";
+import { users } from "./data";
 
-import { Main, Landing, Login } from "./pages";
+import { Landing, Vote } from "./pages";
 
 import "./styles/App.css";
 
-const userData = localStorage.getItem("userData")
-    ? JSON.parse(localStorage.getItem("userData"))
-    : null;
+// users = localStorage.getItem("userData")
+//     ? JSON.parse(localStorage.getItem("userData"))
+//     : null;
 
 const App = () => {
     const [page, setPage] = useState("landing");
 
-    const [landing, login, main] = PAGES;
+    const [landing, voting] = PAGES;
 
-    useEffect(() => {
-        if (!userData) {
-            setPage(landing);
-        } else {
-            setPage(main);
-        }
-    }, [landing, main]);
-
+    const data = [...users];
+    localStorage.setItem("usersData", JSON.stringify(data));
     switch (page) {
-        // case landing:
-        //   return <Landing setPage={setPage} />;
-        case login:
-            return <Login setPage={setPage} />;
-        // case main:
-        //   return <Main setPage={setPage} />;
+        case landing:
+            return <Landing setPage={setPage} />;
+        case voting:
+            return <Vote setPage={setPage} />;
         default:
             return <Landing setPage={setPage} />;
     }

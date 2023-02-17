@@ -1,11 +1,11 @@
-import datingIcon from "../assets/images/logo.png";
+import logo from "../assets/images/logo.png";
 
 const Logo = () => {
     return (
         <>
             <img
-                style={{ height: "7rem", width: "7rem" }}
-                src={datingIcon}
+                style={{ height: "6rem", width: "6rem", margin: "1rem 1rem" }}
+                src={logo}
                 alt="Hogwarts logo"
                 className="logo"
             />
