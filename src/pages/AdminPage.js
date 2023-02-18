@@ -1,5 +1,5 @@
 import React from "react";
-// import { useState } from "react";
+import { useState } from "react";
 import { PAGES } from "../constants";
 
 import Wrapper from "../styles/styled/AdminPage.styled";
@@ -7,9 +7,8 @@ import { UserTable } from "../components";
 import { getItemByKey } from "../components";
 
 const AdminPage = ({ setPage }) => {
-    // const [totalVotes, setTotalVotes] = useState(0);
+    const [totalVotes, setTotalVotes] = useState(getItemByKey("votedUsers"));
     const [landing] = PAGES;
-    let totalVotes = getItemByKey("votedUsers");
 
     const allUsers = getItemByKey("usersData");
     const votedUsers = getItemByKey("votedUsers");
@@ -24,10 +23,6 @@ const AdminPage = ({ setPage }) => {
         setPage(landing);
     };
 
-    // houses.forEach((house) => {
-    //     const houseVotes = getItemByKey(house);
-    //     totalVotes += houseVotes;
-    // });
     return (
         <Wrapper>
             <div className="user-vote-table">
@@ -38,7 +33,14 @@ const AdminPage = ({ setPage }) => {
                 </div>
                 {allUsers.map((user) => {
                     const voted = isVoted(user);
-                    return <UserTable voted={voted} user={user} />;
+                    return (
+                        <UserTable
+                            voted={voted}
+                            user={user}
+                            key={user.id}
+                            updateVotes={setTotalVotes}
+                        />
+                    );
                 })}
                 <h3>Total Votes: {totalVotes.length}</h3>
             </div>

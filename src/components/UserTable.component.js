@@ -1,22 +1,27 @@
 import React from "react";
-// import { useState } from "react";
+import { useState, useEffect } from "react";
 import { houses } from "../constants";
 import { getItemByKey } from "../utils/localStorageFunctions";
 
-const UserTable = ({ voted, user }) => {
-    // const [display, setDisplay] = useState("block");
+const UserTable = ({ voted, user, updateVotes }) => {
+    const [nameClass, setName] = useState("");
+    const [isVoted, setVote] = useState("");
+    const [display, setDisplay] = useState("block");
+    // const [totalVotes, setVotes] = useState(getItemByKey('votedUsers').length)
 
-    let name = "";
     const userName = user.name;
     const email = user.email;
-    let isVoted = "";
-    if (voted) {
-        name = "user-voted user-vote-box";
-        isVoted = "✔";
-    } else {
-        name = "user-not-voted user-vote-box";
-        isVoted = "❌";
-    }
+
+    useEffect(() => {
+        if (voted) {
+            setName("user-voted user-vote-box");
+            setVote("✔");
+        } else {
+            setName("user-not-voted user-vote-box");
+            setVote("❌");
+            setDisplay("none");
+        }
+    }, []);
 
     const deleteVote = () => {
         houses.forEach((houseName) => {
@@ -29,29 +34,29 @@ const UserTable = ({ voted, user }) => {
                 const newHouseArr = votesOfHouse.filter(
                     (obj) => obj.id !== user.id
                 );
+                setName("user-not-voted user-vote-box");
+                setVote("❌");
+                setDisplay("none");
                 localStorage.setItem(houseName, JSON.stringify(newHouseArr));
                 localStorage.setItem("votedUsers", JSON.stringify(newUsersArr));
-                // window.location.reload(true);
+                updateVotes(getItemByKey("votedUsers"));
             }
         });
     };
 
-    const removeButton = () => {
-        if (voted)
-            return (
-                <button className="remove-btn" onClick={deleteVote}>
-                    Remove Vote
-                </button>
-            );
-    };
-
     return (
-        <div className={name}>
+        <div className={nameClass}>
             <h5>{userName}</h5>
             <h5>{email}</h5>
             <div className="vote-status">
                 <h5>{isVoted}</h5>
-                {removeButton()}
+                <button
+                    style={{ display: display }}
+                    className="remove-btn"
+                    onClick={deleteVote}
+                >
+                    Remove Vote
+                </button>
             </div>
         </div>
     );
