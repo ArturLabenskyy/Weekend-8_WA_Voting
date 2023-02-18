@@ -8,6 +8,7 @@ import { findUserByEmail, getItemByKey } from "../utils/localStorageFunctions";
 import LogoutButton from "./LogoutButton.component";
 import VoteBox from "./VoteBox.component";
 import BasicModal from "./VoteModal.component";
+import UserTable from "./UserTable.component";
 
 export {
     Navbar,
@@ -21,4 +22,5 @@ export {
     LogoutButton,
     VoteBox,
     BasicModal,
+    UserTable,
 };

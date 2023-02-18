@@ -1,8 +1,13 @@
 import React from "react";
 import { PAGES } from "../constants";
 
+import { getItemByKey } from "../utils/localStorageFunctions";
+
 const UserAfterVote = ({ setPage }) => {
     const [landing] = PAGES;
+    const votedUsers = getItemByKey("votedUsers");
+    const loggedUser = getItemByKey("loggedInUser");
+    let userMessage = "";
 
     const style = {
         height: "100vh",
@@ -23,9 +28,14 @@ const UserAfterVote = ({ setPage }) => {
         setPage(landing);
     };
 
+    if (votedUsers.filter((user) => user.id === loggedUser[0].id).length >= 1) {
+        userMessage = `${loggedUser[0].name}, You already voted in the past. Your vote will not be counted.`;
+    } else {
+        userMessage = `${loggedUser[0].name}, Thank You for Voting!!!`;
+    }
     return (
         <div style={style} className="after-voting">
-            <h1>Thank You for Voting!!!</h1>
+            <h1>{userMessage}</h1>
             <button style={btnStyle} onClick={handleClick}>
                 Logout
             </button>

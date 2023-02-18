@@ -27,8 +27,16 @@ const VotingPage = ({ setPage }) => {
         let votedHouse = getItemByKey(voteHouse);
         if (
             votedUsers.filter((user) => user.id === loggedUser[0].id).length >=
-            1
+                1 &&
+            loggedUser[0].type === "user"
         ) {
+            setPage(userAfterVote);
+        } else if (
+            votedUsers.filter((user) => user.id === loggedUser[0].id).length >=
+                1 &&
+            loggedUser[0].type === "admin"
+        ) {
+            setPage(adminPage);
         } else {
             ++votedHouse;
             votedUsers.push(loggedUser[0]);
