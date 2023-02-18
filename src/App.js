@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { PAGES } from "./constants";
+import { PAGES, houses } from "./constants";
 import { users } from "./data";
 
 import { Landing, Vote, UserAfterVote, AdminPage } from "./pages";
@@ -17,11 +17,11 @@ const App = () => {
     const [landing, voting, userAfterVote, adminPage] = PAGES;
 
     const data = [...users];
-    const houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
+    // const houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
 
     if (localStorage.getItem("Gryffindor") === null) {
         houses.forEach((el) => {
-            localStorage.setItem(el, [JSON.stringify(0)]);
+            localStorage.setItem(el, [JSON.stringify([])]);
         });
     }
 

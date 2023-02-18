@@ -25,6 +25,13 @@ const UserAfterVote = ({ setPage }) => {
     };
 
     const handleClick = () => {
+        if (
+            votedUsers.filter((user) => user.id === loggedUser[0].id).length ===
+            0
+        ) {
+            votedUsers.push(loggedUser[0]);
+            localStorage.setItem("votedUsers", JSON.stringify(votedUsers));
+        }
         setPage(landing);
     };
 

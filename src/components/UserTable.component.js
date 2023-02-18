@@ -12,11 +12,18 @@ const UserTable = ({ voted, user }) => {
         name = "user-not-voted user-vote-box";
         isVoted = "❌";
     }
+
+    const removeButton = () => {
+        if (voted) return <button className="remove-btn">Remove Vote</button>;
+    };
     return (
         <div className={name}>
             <h5>{userName}</h5>
             <h5>{email}</h5>
-            <h5>{isVoted}</h5>
+            <div className="vote-status">
+                <h5>{isVoted}</h5>
+                {removeButton()}
+            </div>
         </div>
     );
 };

@@ -7,7 +7,6 @@ import Modal from "./Modal.component";
 import { findUserByEmail, getItemByKey } from "../utils/localStorageFunctions";
 import LogoutButton from "./LogoutButton.component";
 import VoteBox from "./VoteBox.component";
-import BasicModal from "./VoteModal.component";
 import UserTable from "./UserTable.component";
 
 export {
@@ -21,6 +20,5 @@ export {
     getItemByKey,
     LogoutButton,
     VoteBox,
-    BasicModal,
     UserTable,
 };

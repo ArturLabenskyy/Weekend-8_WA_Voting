@@ -28,7 +28,7 @@ const VoteBox = ({ houseName, clickFunction, voteHouse }) => {
         clickFunction();
         voteHouse(houseName);
     };
-    const numberOFVotes = JSON.parse(localStorage.getItem(houseName));
+    const numberOFVotes = JSON.parse(localStorage.getItem(houseName)).length;
     return (
         <div className="vote-box" onClick={onHouseClick}>
             <img src={imageUrl} alt={houseName} />

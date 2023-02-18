@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { PAGES } from "../constants";
+import { PAGES, houses } from "../constants";
 
 import Wrapper from "../styles/styled/Vote.styled";
 import { Logo, LogoutButton, VoteBox } from "../components";
@@ -11,7 +11,7 @@ const VotingPage = ({ setPage }) => {
     const [voteHouse, setHouse] = useState("");
     const [, , userAfterVote, adminPage] = PAGES;
 
-    const houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
+    // const houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
 
     const handleClick = () => {
         setButton("block");
@@ -23,8 +23,8 @@ const VotingPage = ({ setPage }) => {
     const voteConfirm = () => {
         const votedUsers = getItemByKey("votedUsers");
         const loggedUser = getItemByKey("loggedInUser");
+        const votedHouseArray = getItemByKey(voteHouse);
 
-        let votedHouse = getItemByKey(voteHouse);
         if (
             votedUsers.filter((user) => user.id === loggedUser[0].id).length >=
                 1 &&
@@ -38,13 +38,21 @@ const VotingPage = ({ setPage }) => {
         ) {
             setPage(adminPage);
         } else {
-            ++votedHouse;
-            votedUsers.push(loggedUser[0]);
-            localStorage.setItem(voteHouse, JSON.stringify(votedHouse));
-            localStorage.setItem("votedUsers", JSON.stringify(votedUsers));
+            if (
+                votedHouseArray.filter((house) => house.id === loggedUser[0].id)
+                    .length === 0
+            ) {
+                votedHouseArray.push(loggedUser[0]);
+                localStorage.setItem(
+                    voteHouse,
+                    JSON.stringify(votedHouseArray)
+                );
+            }
             if (loggedUser[0].type === "user") {
                 setPage(userAfterVote);
             } else {
+                votedUsers.push(loggedUser[0]);
+                localStorage.setItem("votedUsers", JSON.stringify(votedUsers));
                 setPage(adminPage);
             }
         }

@@ -40,11 +40,24 @@ const Wrapper = styled.div`
         background-color: #e97777;
     }
 
+    .vote-status {
+        display: flex;
+        flex-direction: row;
+    }
+
     button {
         height: 4rem;
         width: 10rem;
+        margin: 1rem 0;
         font-size: 2.5rem;
         text-align: center;
+    }
+
+    .remove-btn {
+        height: 2rem;
+        width: 8rem;
+        font-size: 1rem;
+        margin-right: 1rem;
     }
 `;
 export default Wrapper;

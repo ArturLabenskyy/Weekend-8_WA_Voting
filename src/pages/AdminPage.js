@@ -1,4 +1,5 @@
 import React from "react";
+// import { useState } from "react";
 import { PAGES } from "../constants";
 
 import Wrapper from "../styles/styled/AdminPage.styled";
@@ -6,7 +7,9 @@ import { UserTable } from "../components";
 import { getItemByKey } from "../components";
 
 const AdminPage = ({ setPage }) => {
+    // const [totalVotes, setTotalVotes] = useState(0);
     const [landing] = PAGES;
+    let totalVotes = getItemByKey("votedUsers");
 
     const allUsers = getItemByKey("usersData");
     const votedUsers = getItemByKey("votedUsers");
@@ -20,6 +23,11 @@ const AdminPage = ({ setPage }) => {
     const handleClick = () => {
         setPage(landing);
     };
+
+    // houses.forEach((house) => {
+    //     const houseVotes = getItemByKey(house);
+    //     totalVotes += houseVotes;
+    // });
     return (
         <Wrapper>
             <div className="user-vote-table">
@@ -32,7 +40,9 @@ const AdminPage = ({ setPage }) => {
                     const voted = isVoted(user);
                     return <UserTable voted={voted} user={user} />;
                 })}
+                <h3>Total Votes: {totalVotes.length}</h3>
             </div>
+
             <button onClick={handleClick}>Logout</button>
         </Wrapper>
     );
