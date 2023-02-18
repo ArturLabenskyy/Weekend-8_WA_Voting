@@ -1,6 +1,11 @@
 import React from "react";
+// import { useState } from "react";
+import { houses } from "../constants";
+import { getItemByKey } from "../utils/localStorageFunctions";
 
 const UserTable = ({ voted, user }) => {
+    // const [display, setDisplay] = useState("block");
+
     let name = "";
     const userName = user.name;
     const email = user.email;
@@ -13,9 +18,33 @@ const UserTable = ({ voted, user }) => {
         isVoted = "❌";
     }
 
-    const removeButton = () => {
-        if (voted) return <button className="remove-btn">Remove Vote</button>;
+    const deleteVote = () => {
+        houses.forEach((houseName) => {
+            const votesOfHouse = getItemByKey(houseName);
+            if (votesOfHouse.length > 0) {
+                const allVotedUsers = getItemByKey("votedUsers");
+                const newUsersArr = allVotedUsers.filter(
+                    (obj) => obj.id !== user.id
+                );
+                const newHouseArr = votesOfHouse.filter(
+                    (obj) => obj.id !== user.id
+                );
+                localStorage.setItem(houseName, JSON.stringify(newHouseArr));
+                localStorage.setItem("votedUsers", JSON.stringify(newUsersArr));
+                // window.location.reload(true);
+            }
+        });
     };
+
+    const removeButton = () => {
+        if (voted)
+            return (
+                <button className="remove-btn" onClick={deleteVote}>
+                    Remove Vote
+                </button>
+            );
+    };
+
     return (
         <div className={name}>
             <h5>{userName}</h5>
