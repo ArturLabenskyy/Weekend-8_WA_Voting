@@ -5,7 +5,6 @@ import { PAGES } from "../constants";
 
 import { FormRow, Modal, findUserByEmail } from "../components";
 import Wrapper from "../styles/styled/Login.styled";
-// import { Vote } from ".";
 
 const [, voting] = PAGES;
 

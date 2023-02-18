@@ -30,7 +30,9 @@ const Wrapper = styled.div`
         }
     }
     p {
-        color: var(--grey-600);
+        color: #030303;
+        font-size: 1.5rem;
+        font-weight: bold;
     }
     .main-img {
         display: block;

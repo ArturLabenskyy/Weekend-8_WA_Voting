@@ -4,6 +4,7 @@ const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     background-color: #f2f2f2;
+    background-image: url("../../assets/images/GreatHall.webp") 100%;
 
     .logo {
         width: 100%;
@@ -15,6 +16,10 @@ const Wrapper = styled.div`
 
     h2 {
         width: 80%;
+    }
+
+    h3 {
+        margin-left: 2rem;
     }
 
     .vote-choice {
@@ -32,13 +37,11 @@ const Wrapper = styled.div`
         justify-content: space-around;
         align-items: center;
         margin-bottom: 1rem;
-        border: 1px red solid;
     }
 
     .vote-box img {
         width: 100%;
         height: 70%;
-        border: 3px black solid;
     }
 
     .vote-buttons {

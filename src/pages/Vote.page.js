@@ -3,15 +3,13 @@ import { useState } from "react";
 import { PAGES, houses } from "../constants";
 
 import Wrapper from "../styles/styled/Vote.styled";
-import { Logo, LogoutButton, VoteBox } from "../components";
+import { Logo, VoteBox } from "../components";
 import { getItemByKey } from "../utils/localStorageFunctions";
 
 const VotingPage = ({ setPage }) => {
     const [hiddenButton, setButton] = useState("none");
     const [voteHouse, setHouse] = useState("");
     const [, , userAfterVote, adminPage] = PAGES;
-
-    // const houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
 
     const handleClick = () => {
         setButton("block");
@@ -62,7 +60,6 @@ const VotingPage = ({ setPage }) => {
         <Wrapper>
             <div className="logo">
                 <Logo />
-                <LogoutButton />
             </div>
             <h3>
                 Hello, {getItemByKey("loggedInUser")[0].name}! Please, make your

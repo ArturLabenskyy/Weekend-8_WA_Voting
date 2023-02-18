@@ -17,7 +17,6 @@ const App = () => {
     const [landing, voting, userAfterVote, adminPage] = PAGES;
 
     const data = [...users];
-    // const houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
 
     if (localStorage.getItem("Gryffindor") === null) {
         houses.forEach((el) => {

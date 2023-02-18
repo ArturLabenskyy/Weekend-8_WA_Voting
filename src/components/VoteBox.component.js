@@ -1,6 +1,5 @@
 import React from "react";
-// import { useState } from "react";
-// const houses = ["Gryffindor", "hufflepuff", "ravenclaw", "slytherin"];
+
 import gryffindor from "../assets/images/gryffindor.png";
 import hufflepuff from "../assets/images/hufflepuff.png";
 import ravenclaw from "../assets/images/ravenclaw.png";

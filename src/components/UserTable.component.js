@@ -7,7 +7,6 @@ const UserTable = ({ voted, user, updateVotes }) => {
     const [nameClass, setName] = useState("");
     const [isVoted, setVote] = useState("");
     const [display, setDisplay] = useState("block");
-    // const [totalVotes, setVotes] = useState(getItemByKey('votedUsers').length)
 
     const userName = user.name;
     const email = user.email;
