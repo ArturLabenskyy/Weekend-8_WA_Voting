@@ -1,11 +1,11 @@
-import { PAGES } from "../constants";
+// import { PAGES } from "../constants";
 
 import main from "../assets/images/hogwarts.png";
 import Wrapper from "../styles/styled/Landing.styled";
 import { Logo } from "../components";
 import Login from "./Login.page";
 
-const [, voting] = PAGES;
+// const [, voting] = PAGES;
 
 const Landing = ({ setPage }) => {
     localStorage.removeItem(`loggedInUser`);

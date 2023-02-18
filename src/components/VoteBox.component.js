@@ -6,8 +6,6 @@ import hufflepuff from "../assets/images/hufflepuff.png";
 import ravenclaw from "../assets/images/ravenclaw.png";
 import slytherin from "../assets/images/slytherin.png";
 
-import Modal from "./Modal.component";
-
 const VoteBox = ({ houseName, clickFunction, voteHouse }) => {
     let imageUrl = "";
     switch (houseName) {
@@ -22,6 +20,8 @@ const VoteBox = ({ houseName, clickFunction, voteHouse }) => {
             break;
         case "Slytherin":
             imageUrl = slytherin;
+            break;
+        default:
     }
 
     const onHouseClick = () => {
