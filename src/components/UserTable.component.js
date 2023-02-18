@@ -21,7 +21,7 @@ const UserTable = ({ voted, user, updateVotes }) => {
             setVote("❌");
             setDisplay("none");
         }
-    }, []);
+    }, [voted]);
 
     const deleteVote = () => {
         houses.forEach((houseName) => {
