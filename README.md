@@ -1,71 +1,168 @@
-# Voting-App 
+# My Voting Application for Hogwarts Faculties Houses
 
-My weekend project number 8 for *Voting App* [DEMO](https://vote-for-house.netlify.app/).
+## Demo
 
-## React Library in use
-material UI.React-icons.Styled-components.
+https://vote-for-house.netlify.app/
 
-In the project directory, you can run:
+## List of Users and Password to login
 
-### `npm start`
+So here the list of emails and passwords for login:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+        password: 9YSLDWL
+        email: tomas19@aol.com
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+        password: 7GTHPPL
+        email: johndoe@gmail.com
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+        password: 6FDRKPL
+        email: janedoe@yahoo.com
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+        password: 4JDMSKQ
+        email: bob.johnson@hotmail.com
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+        password: 2NDJYFL
+        email: alicelee@gmail.com
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+        password: 1KSMQDJ
+        email: davidkim@yahoo.com
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+        password: 3FLMQNK
+        email: sarahpark@gmail.com
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+        password: 8DPNLWK
+        email: jack.brown@hotmail.com
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+        password: 5MFLPJS
+        email: emilychen@yahoo.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+        password: 7LFDNSK
+        email: megandavis@aol.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+        password: 9MFLQPK
+        email: adamwilson@hotmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+        password: 3PFLDNK
+        email: laura.brown@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+        password: 6LFNSJQ
+        email: chrislee@yahoo.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+        password: 1DLMFKJ
+        email: kellykim@aol.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+        password: 8PLFDNK
+        email: mikedavis@hotmail.com
+
+
+        password: 9LFDNSK
+        email: kate.johnson@gmail.com
+
+
+        password: 4PLDNJK
+        email: tom.smith@yahoo.com
+
+
+        password: 2LFDNSK
+        email: erickim@aol.com
+
+
+        password: 1DLMFKJ
+        email: susanlee@hotmail.com
+
+
+        password: 7LFDNSK
+        email: jessica.brown@gmail.com
+
+
+        password: 9PLFDNK
+        email: paulwilson@yahoo.com
+
+
+        password: 4LFDNSK
+        email: linda.davis@aol.com
+
+
+        password: 3DLMFKJ
+        email: jasonkim@hotmail.com
+
+
+        password: 5LFDNSK
+        email: karen.johnson@gmail.com
+
+
+        password: 1PLFDNK
+        email: sam.smith@yahoo.com
+
+
+        password: 6DLMFKJ
+        email: kevinkim@aol.com
+
+
+        password: 8LFDNSK
+        email: julie.brown@hotmail.com
+
+
+        password: 2PLFDNK
+        email: peterwilson@gmail.com
+
+
+        password: 9PLMFKJ
+        email: gracelee@aol.com
+
+
+        password: 7LFDNSK
+        email: mikebrown@hotmail.com
+
+
+        password: 1PLFDNK
+        email: christine.johnson@yahoo.com
+
+
+        password: 5DLMFKJ
+        email: stevensmith@gmail.com
+
+
+        password: 3PLFDNK
+        email: karenkim@aol.com
+
+
+        password: 6LFDNSK
+        email: mattdavis@hotmail.com
+
+
+        password: 9LFDNSK
+        email: samantha.brown@gmail.com
+
+
+        password: 2PLFDNK
+        email: tom.wilson@yahoo.com
+
+
+        password: 8DLMFKJ
+        email: jennylee@aol.com
+
+
+        password: 4PLFDNK
+        email: briansmith@hotmail.com
+
+
+        password: 7LFDNSK
+        email: anna.johnson@gmail.com
+
+## Authors
+
+(https://www.github.com/arturlabenskyy)

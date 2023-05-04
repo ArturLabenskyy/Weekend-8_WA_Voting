@@ -7,9 +7,7 @@ import { Landing, Vote, UserAfterVote, AdminPage } from "./pages";
 
 import "./styles/App.css";
 
-// users = localStorage.getItem("userData")
-//     ? JSON.parse(localStorage.getItem("userData"))
-//     : null;
+
 
 const App = () => {
     const [page, setPage] = useState("landing");
